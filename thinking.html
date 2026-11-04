@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="color-scheme" content="light"/>
+<title>Thinking — Fast Uncensored AI Reasoning | Kiomi Studio</title>
+<meta name="description" content="Thinking is Kiomi Studio's fast AI model for quick searches and reasoning. Answers in seconds, no hedging, no refusals. Free to try as a guest. Go deeper with DeepThink."/>
+<link rel="canonical" href="https://vervekiomi.github.io/thinking"/>
+<meta property="og:title" content="Thinking — Fast Uncensored AI Reasoning"/>
+<meta property="og:description" content="Quick searches. Real reasoning. Answers in seconds, no hedging. Meet Thinking inside Kiomi Studio."/>
+<meta property="og:url" content="https://vervekiomi.github.io/thinking"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#ffffff"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Thinking free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Thinking gives you a few guest messages without signing in. Create a free account to keep chatting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Thinking vs DeepThink — which one do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thinking for quick searches and reasoning in seconds. DeepThink when a question deserves five minutes of real research and a shown reasoning chain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Thinking uncensored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Same uncensored spine as everything in Kiomi Studio. Only the legal lines from our Terms apply."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use it on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Kiomi Studio runs in any mobile browser."
+      }
+    }
+  ]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{color-scheme:light;--bg:#ffffff;--ink:#0a0a0a;--ink2:#4a4a5a;--ink3:#8a8a9a;--line:#e8e8f0;--chip:#f0f4ff;--blue1:#3b82f6;--blue2:#06b6d4;--blue3:#8b5cf6;--ease:cubic-bezier(.22,.9,.3,1)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px clamp(20px,5vw,60px);background:rgba(255,255,255,.72);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font:600 16px 'Space Grotesk';flex-shrink:0}
+.bmark{width:38px;height:38px;border-radius:50%;background:#fff;position:relative;overflow:hidden;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.06),0 0 0 1px var(--line)}
+.bmark canvas{width:100%;height:100%;display:block;border-radius:50%}
+.nav-right{display:flex;align-items:center;gap:22px;min-width:0}
+.nav-right .plain{font-size:13.5px;color:var(--ink2);font-weight:500;white-space:nowrap}
+.nav-right .plain:hover{color:var(--ink)}
+@media(max-width:640px){.nav-right .plain{display:none}}
+.btn-primary,.btn-install,.btn-white{position:relative;overflow:hidden;cursor:pointer;white-space:nowrap;border:0;font-family:'Inter',sans-serif}
+.btn-primary{background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:13px 22px;border-radius:12px;font:600 14px 'Inter';display:inline-flex;align-items:center;gap:8px;box-shadow:0 14px 34px -12px rgba(59,130,246,.4);transition:transform .18s var(--ease)} 
+.btn-primary .arr svg,.btn-install .arr svg,.btn-white .arr svg{width:15px;height:15px}
+.arr{display:inline-flex;align-items:center}
+.hero{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:150px 24px 70px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:1100px;height:1100px;background:radial-gradient(closest-side,rgba(59,130,246,.08),transparent 70%);pointer-events:none;z-index:-1}
+h1{font:600 clamp(40px,7vw,80px)/1.05 'Space Grotesk';letter-spacing:-.03em;max-width:900px}
+h1 .grad{background:linear-gradient(120deg,var(--blue1) 0%,var(--blue2) 50%,var(--blue3) 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 3s linear infinite}
+@keyframes shine{from{background-position:200% 0}to{background-position:-200% 0}}
+.sub{margin:22px auto 0;max-width:600px;font-size:clamp(15px,1.6vw,17px);color:var(--ink2);line-height:1.55}
+.launch{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center;align-items:center}
+.btn-install{padding:13px 22px;border-radius:12px;font:500 14px 'Inter';color:var(--ink2);border:1px solid var(--line);display:inline-flex;align-items:center;gap:8px;background:#fff;transition:transform .18s var(--ease),border-color .18s,color .18s,background .18s}
+.btn-install:hover{border-color:var(--blue1);color:var(--blue1);background:var(--chip)} 
+@media(max-width:480px){.launch{gap:10px}.btn-primary,.btn-install{padding:13px 18px;font-size:13.5px}}
+.appwin{margin:60px auto 0;width:min(560px,100%);background:#0c0c10;border:1px solid #1f1f28;border-radius:22px;padding:22px;text-align:left;box-shadow:0 30px 80px -30px rgba(10,10,40,.4);color:#f2f2f5;font-size:14px}
+.qrow{display:flex;justify-content:flex-end}
+.q{background:#232329;color:#f2f2f5;padding:10px 16px;border-radius:14px;font-size:13.5px}
+.thinkrow{display:flex;align-items:center;gap:10px;margin-top:18px}
+.avatar{width:26px;height:26px;border-radius:50%;background:conic-gradient(from 180deg,#8b5cf6,#06b6d4,#ff6ec7,#8b5cf6);flex-shrink:0}
+.thinkrow b{color:#fff;font:600 14px 'Inter'}
+.thinkrow span{color:#8a8a96;font-size:13px}
+.srcrow{display:flex;align-items:center;gap:10px;margin-top:16px;color:#8a8a96;font-size:13px}
+.favs{display:flex;padding-left:4px}
+.favs i{width:18px;height:18px;border-radius:50%;margin-left:-5px;border:2px solid #0c0c10;display:inline-block}
+.favs i:nth-child(1){background:#e8e8e8}.favs i:nth-child(2){background:#2563eb}.favs i:nth-child(3){background:#0ea5e9}.favs i:nth-child(4){background:#f59e0b}.favs i:nth-child(5){background:#7c3aed}
+.found{display:flex;align-items:center;gap:8px;margin-top:8px;color:#8a8a96;font-size:13px}
+.found svg{width:14px;height:14px}
+.finds{margin-top:16px;display:flex;flex-direction:column;gap:14px}
+.f{color:#c9c9d2;font-size:13.5px;line-height:1.6;opacity:0;transform:translateY(8px);animation:pop .5s var(--ease) forwards}
+.f b{color:#fff}
+.f .cite{color:#6b6b78}
+.f:nth-child(1){animation-delay:.5s}.f:nth-child(2){animation-delay:1.5s}.f:nth-child(3){animation-delay:2.5s}
+@keyframes pop{to{opacity:1;transform:translateY(0)}}
+.inbar{margin-top:18px;background:#17171c;border:1px solid #26262e;border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:12px}
+.inbar .ph{color:#6b6b78;font-size:14px}
+.inrow{display:flex;align-items:center;justify-content:space-between}
+.model{display:flex;align-items:center;gap:8px;color:#e8e8ee;font-size:13.5px;font-weight:500}
+.model svg{width:14px;height:14px;color:#8a8a96}
+.stop{width:26px;height:26px;border-radius:8px;background:#fff;display:grid;place-items:center}
+.stop i{width:9px;height:9px;background:#0c0c10;border-radius:2px;display:block}
+.section{padding:80px clamp(24px,6vw,80px);max-width:1200px;margin:0 auto}
+.sec-eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;color:var(--blue1);text-transform:uppercase;margin-bottom:14px}
+.sec-title{font:600 clamp(30px,4.5vw,48px)/1.08 'Space Grotesk';letter-spacing:-.02em;max-width:720px}
+.sec-sub{margin-top:16px;max-width:620px;color:var(--ink2);font-size:16px}
+.tiers{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}}
+.tier{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 40px -24px rgba(10,10,10,.12);transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+.tier:hover{transform:translateY(-4px);box-shadow:0 24px 60px -24px rgba(59,130,246,.25)}
+.tier.max{background:linear-gradient(160deg,#f0f4ff,#faf5ff);border-color:rgba(59,130,246,.35)}
+.badge{align-self:flex-start;padding:5px 12px;border-radius:999px;font:600 11px 'Inter';letter-spacing:.1em;text-transform:uppercase;border:1px solid}
+.badge.free{color:var(--blue1);background:var(--chip);border-color:rgba(59,130,246,.25)}
+.badge.lock{color:var(--blue3);background:#f5f0ff;border-color:rgba(139,92,246,.25)}
+.tier h3{font:600 24px 'Space Grotesk';letter-spacing:-.02em}
+.tier .desc{font-size:14.5px;color:var(--ink2)}
+.tier ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px}
+.tier li{font-size:14px;color:var(--ink2);padding-left:22px;position:relative}
+.tier li::before{content:"→";position:absolute;left:0;color:var(--blue1)}
+.tier .btn-primary,.tier .btn-install{margin-top:auto;align-self:flex-start}
+.steps{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.steps{grid-template-columns:1fr}}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s var(--ease),border-color .25s}
+.step:hover{transform:translateY(-4px);border-color:rgba(59,130,246,.35)}
+.step .num{font:700 32px 'Space Grotesk';background:linear-gradient(120deg,var(--blue2),var(--blue1));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:12px}
+.step h3{font:600 18px 'Space Grotesk';margin-bottom:8px}
+.step p{font-size:13.5px;color:var(--ink2)}
+.vs{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:720px){.vs{grid-template-columns:1fr}}
+.vs-col{border-radius:18px;padding:28px;border:1px solid var(--line)}
+.vs-col.them{background:#f7f8fb}
+.vs-col.us{background:var(--chip);border-color:rgba(59,130,246,.3)}
+.vs-col h4{font:600 13px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;color:var(--ink3)}
+.vs-col.us h4{color:var(--blue1)}
+.vs-col li{list-style:none;padding:10px 14px;border-radius:10px;margin-bottom:8px;font-size:14px}
+.vs-col.them li{background:rgba(10,10,10,.04);color:var(--ink3);text-decoration:line-through}
+.vs-col.us li{background:#fff;color:var(--ink);border:1px solid rgba(59,130,246,.2)}
+.grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s var(--ease),border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(59,130,246,.35)}
+.card h3{font:600 18px 'Space Grotesk';margin-bottom:10px}
+.card p{font-size:14px;color:var(--ink2)}
+.prompts{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:720px){.prompts{grid-template-columns:1fr}}
+.prompt{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--ink2);font-style:italic;transition:border-color .2s,color .2s}
+.prompt:hover{border-color:rgba(59,130,246,.4);color:var(--ink)}
+.prompt::before{content:"“";color:var(--blue1);font-style:normal;margin-right:4px}
+.prompt::after{content:"”";color:var(--blue1);font-style:normal;margin-left:4px}
+.faq{margin-top:56px;max-width:760px}
+details{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:#fff;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:18px 22px;font:600 15px 'Inter';display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--blue1);font-size:20px;transition:transform .25s var(--ease);flex-shrink:0}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 22px 20px;font-size:14px;color:var(--ink2)}
+details p a{color:var(--blue1)}
+.cta-strip{background:linear-gradient(135deg,var(--blue1),var(--blue2),var(--blue3));color:#fff;padding:clamp(50px,7vw,90px) 24px;text-align:center}
+.cta-strip h2{font:600 clamp(28px,4vw,44px)/1.1 'Space Grotesk';letter-spacing:-.02em}
+.cta-strip p{margin:16px auto 32px;max-width:460px;color:rgba(255,255,255,.88);font-size:15px}
+.btn-white{background:#fff;color:var(--blue1);padding:17px 30px;border-radius:16px;font:600 15px 'Inter';display:inline-flex;align-items:center;gap:10px;transition:transform .18s var(--ease)}
+.btn-white:hover{transform:translateY(-2px)}
+footer{border-top:1px solid var(--line);padding:40px clamp(24px,6vw,80px);display:flex;flex-direction:column;align-items:center;gap:18px;font-size:12.5px;color:var(--ink3)}
+footer .fl{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+footer a{color:var(--ink3);transition:color .2s}
+footer a:hover{color:var(--blue1)}
+footer b{color:var(--ink)}
+</style>
+<style id="kiomiRipple">
+.btn-primary,.btn-install,.btn-white,.btn-android,.btn,.press{position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.k-ripple{position:absolute;border-radius:50%;pointer-events:none;background:currentColor;opacity:.28;transform:scale(0);animation:kRipple .8s cubic-bezier(.22,.9,.3,1) forwards}
+.btn-primary .k-ripple,.btn-android .k-ripple,.btn-pink .k-ripple{background:#fff;opacity:.4}
+@keyframes kRipple{to{transform:scale(1);opacity:0}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="brand">
+    <div class="bmark"><canvas id="logoCanvas" width="84" height="84"></canvas></div>
+    Kiomi
+  </a>
+  <div class="nav-right">
+    <a class="plain" href="/">Home</a>
+    <a class="plain" href="/deepthink">DeepThink</a>
+    <a class="btn-primary" href="/studio">Try Thinking</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Quick searches. Real reasoning.<br/><span class="grad">Answers in seconds.</span></h1>
+  <p class="sub">Thinking is Kiomi's fast brain. It searches, reasons and answers in seconds, with no hedging and no topic off-limits. Free to try as a guest.</p>
+  <div class="launch">
+    <a class="btn-primary" href="/studio">Start thinking <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span></a>
+    <a class="btn-install" href="/deepthink">Go deeper with DeepThink</a>
+  </div>
+
+  <div class="appwin">
+    <div class="qrow"><div class="q">Compare two budget laptops for coding</div></div>
+    <div class="thinkrow"><span class="avatar"></span><b>Thinking</b><span id="tk">0s</span></div>
+    <div class="srcrow">Sources <span class="favs"><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div class="found"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg> Found 12 web pages</div>
+    <div class="finds">
+      <div class="f">• <b>The pick:</b> the 14-inch model wins on battery life and keyboard comfort.</div>
+      <div class="f">• <b>The trade-off:</b> the cheaper one has less RAM, which matters for local tools.</div>
+    </div>
+    <div class="inbar">
+      <div class="ph">Ask Thinking anything…</div>
+      <div class="inrow">
+        <div class="model"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg> Thinking <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div>
+        <div class="stop"><i></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-eyebrow">Built for speed</div>
+  <h2 class="sec-title">Quick questions. Honest answers.</h2>
+  <p class="sec-sub">Thinking is the everyday brain. It finds what you need, works through it, and gets out of your way.</p>
+  <div class="grid">
+    <div class="card"><h3>Quick searches</h3><p>Look things up and get a sourced answer in seconds.</p></div>
+    <div class="card"><h3>Everyday reasoning</h3><p>Work through a problem step by step without the wall of text.</p></div>
+    <div class="card"><h3>Quick comparisons</h3><p>Two options, the trade-offs, and a clear pick.</p></div>
+    <div class="card"><h3>Fact checks</h3><p>Verify a claim against sources before you repeat it.</p></div>
+    <div class="card"><h3>Plain explanations</h3><p>Hard concepts, explained simply and directly.</p></div>
+    <div class="card"><h3>Straight answers</h3><p>No hedging, no refusals, no corporate anesthesia.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-eyebrow">Need more?</div>
+  <h2 class="sec-title">When the question deserves more time.</h2>
+  <p class="sec-sub">Thinking handles the quick stuff. For deep research with a shown reasoning chain, DeepThink takes up to five minutes and checks its own work first.</p>
+  <div class="launch" style="margin-top:28px"><a class="btn-primary" href="/deepthink">Meet DeepThink <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span></a></div>
+</section>
+
+<section class="section">
+  <div class="sec-eyebrow">FAQ</div>
+  <h2 class="sec-title">Fair questions, straight answers.</h2>
+  <div class="faq">
+    <details><summary>Is Thinking free?</summary><p>Yes. Thinking gives you a few guest messages without signing in. Create a free account to keep chatting.</p></details>
+    <details><summary>Thinking vs DeepThink — which one do I need?</summary><p>Thinking for quick searches and reasoning in seconds. DeepThink when a question deserves five minutes of real research and a shown reasoning chain.</p></details>
+    <details><summary>Is Thinking uncensored?</summary><p>Yes. Same uncensored spine as everything in Kiomi Studio. Only the legal lines from our Terms apply.</p></details>
+    <details><summary>Can I use it on my phone?</summary><p>Yes. Kiomi Studio runs in any mobile browser.</p></details>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h2>Fast answers, one tap away.</h2>
+  <p>Thinking is free to try as a guest. Need more depth? DeepThink is waiting.</p>
+  <a class="btn-white" href="/studio">Enter Kiomi Studio <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span></a>
+</div>
+
+<footer>
+  <div class="fl">
+    <a href="/">Home</a>
+    <a href="/deepthink">DeepThink</a>
+    <a href="/yurei">Yurei</a>
+    <a href="/terms-of-service">Terms of Service</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+  </div>
+  <div>© 2026 Kiomi · From <b>Verve</b></div>
+</footer>
+
+<script>
+(function(){
+  const el=document.getElementById('tk'); if(!el) return;
+  let s=0;
+  const iv=setInterval(()=>{ s++; el.textContent=s+'s'; if(s>=25) clearInterval(iv); },90);
+})();
+
+document.querySelectorAll('.btn-primary, .btn-install, .btn-white').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    if (this.classList.contains('k-busy')) return;
+    const href = this.getAttribute('href');
+    const isAnchor = href && href.startsWith('#');
+    const isInternal = href && href.startsWith('/');
+    if (isAnchor || isInternal) {
+      e.preventDefault();
+      this.classList.add('k-busy');
+      setTimeout(() => {
+        this.classList.remove('k-busy');
+        if (isAnchor) {
+          const t = document.querySelector(href);
+          if (t) t.scrollIntoView({behavior:'smooth',block:'start'});
+        } else {
+          window.location.href = href;
+        }
+      }, 350);
+    }
+  });
+});
+
+(function(){
+  const canvas = document.getElementById('logoCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = 84, H = 84, R = 42, cx = W/2, cy = H/2;
+  const blobs = [
+    { fx: 0.71, fy: 1.13, phase: 0.00, amp: 0.52, r: 40, color: '#00f2ff' },
+    { fx: 1.31, fy: 0.83, phase: 1.20, amp: 0.48, r: 38, color: '#ff00c8' },
+    { fx: 0.93, fy: 1.41, phase: 2.10, amp: 0.44, r: 35, color: '#39ff14' },
+    { fx: 1.17, fy: 0.67, phase: 0.80, amp: 0.50, r: 33, color: '#6e5fff' },
+    { fx: 1.53, fy: 1.27, phase: 1.70, amp: 0.38, r: 30, color: '#ff0088' },
+    { fx: 0.79, fy: 1.63, phase: 3.00, amp: 0.42, r: 32, color: '#ffff00' },
+    { fx: 1.23, fy: 0.91, phase: 4.20, amp: 0.35, r: 29, color: '#00ffdd' },
+    { fx: 0.61, fy: 1.37, phase: 5.10, amp: 0.46, r: 36, color: '#a855f7' },
+  ];
+  const SLOW = 0.12, FAST = 2.2, CYCLE = 5000;
+  let startTime = performance.now(), lastTime = startTime, t = 0;
+  function getSpeed(now){
+    const cycleT = (now - startTime) % CYCLE;
+    const s = (Math.sin((cycleT / CYCLE) * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+    return SLOW + (FAST - SLOW) * s;
+  }
+  function draw(now){
+    const dt = now - lastTime; lastTime = now;
+    t += getSpeed(now) * dt * 0.001;
+    ctx.clearRect(0,0,W,H);
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx,cy,R,0,Math.PI*2); ctx.clip();
+    const bg = ctx.createRadialGradient(cx,cy,0,cx,cy,R);
+    bg.addColorStop(0,'#ffffff'); bg.addColorStop(1,'#f3f4f6');
+    ctx.fillStyle = bg; ctx.fillRect(0,0,W,H);
+    blobs.forEach(b => {
+      const bx = cx + Math.sin(b.fx*t + b.phase) * R * b.amp;
+      const by = cy + Math.cos(b.fy*t + b.phase*1.4) * R * b.amp;
+      const pulse = 1 + 0.08 * Math.sin(b.fx*t*2.3 + b.phase);
+      const br = b.r * pulse;
+      const grad = ctx.createRadialGradient(bx,by,0,bx,by,br);
+      grad.addColorStop(0, b.color+'ff'); grad.addColorStop(0.4, b.color+'cc');
+      grad.addColorStop(0.8, b.color+'44'); grad.addColorStop(1, b.color+'00');
+      ctx.beginPath(); ctx.arc(bx,by,br,0,Math.PI*2);
+      ctx.fillStyle = grad; ctx.fill();
+    });
+    ctx.restore();
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+<script>
+(function(){
+  var SEL='.btn-primary,.btn-install,.btn-white,.btn-android,.btn,.press';
+  document.addEventListener('pointerdown',function(e){
+    var b=e.target.closest(SEL); if(!b) return;
+    var r=b.getBoundingClientRect(), s=Math.max(r.width,r.height)*2.2;
+    var d=document.createElement('span'); d.className='k-ripple';
+    d.style.width=d.style.height=s+'px';
+    d.style.left=(e.clientX-r.left-s/2)+'px';
+    d.style.top=(e.clientY-r.top-s/2)+'px';
+    b.appendChild(d);
+    setTimeout(function(){d.remove();},900);
+  });
+})();
+</script>
+</body>
+</html>

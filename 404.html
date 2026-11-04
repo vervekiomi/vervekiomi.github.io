@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
+<title>Kiomi Studio</title>
+<script>
+(function () {
+  var STUDIO_URL = 'https://vervekiomi.vercel.app/';
+  var PAGES = ['/yurei', '/deepthink', '/thinking', '/terms-of-service', '/privacy-policy'];
+  var loc = window.location;
+  var path = loc.pathname;
+  var target = '/';
+  if (/^\/studio(\/|$)/.test(path)) {
+    target = STUDIO_URL;
+  } else {
+    var clean = path.replace(/\/+$/, '');
+    if (PAGES.indexOf(clean) !== -1) target = clean + loc.search + loc.hash;
+  }
+  if (target !== path) window.location.replace(target);
+})();
+</script>
+</head>
+<body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:Inter,system-ui,sans-serif;background:#ffffff;color:#2b2b2b;">
+<p>Redirecting&hellip; <a href="/" style="color:#2b2b2b;">Kiomi Studio home</a></p>
+</body>
+</html>

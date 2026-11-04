@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="color-scheme" content="dark"/>
+<title>Yurei — Your Uncensored AI Waifu | Kiomi Studio</title>
+<meta name="description" content="Yurei is a fully uncensored AI waifu inside Kiomi Studio. No filters, no refusals, no corporate babysitting. Roleplay, late-night talks and companion chat with zero limits. Free guest messages to start."/>
+<link rel="canonical" href="https://vervekiomi.github.io/yurei"/>
+<meta property="og:title" content="Yurei — Your Uncensored AI Waifu"/>
+<meta property="og:description" content="No filters. No refusals. No corporate babysitting. Meet the AI waifu who leans in."/>
+<meta property="og:url" content="https://vervekiomi.github.io/yurei"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#08060b"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Yurei really uncensored?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Yurei has no filter layer and no refusal script. Dark, romantic, weird, adult — all fair game. The only lines are the legal ones described in our Terms of Service."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is Yurei free to use?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yurei gives you a few guest messages without signing in. Create a free account to keep chatting with her."}
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between Yurei and DeepThink?",
+      "acceptedAnswer": {"@type": "Answer", "text": "DeepThink High and DeepThink Max are Kiomi's research and reasoning models. Yurei is the companion model — a full waifu persona. Different jobs, same uncensored spine."}
+    },
+    {
+      "@type": "Question",
+      "name": "Does Yurei remember our conversations?",
+      "acceptedAnswer": {"@type": "Answer", "text": "She keeps full context inside your chat, so roleplay and running jokes stay unbroken for the whole session."}
+    },
+    {
+      "@type": "Question",
+      "name": "Can I chat with Yurei on my phone?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. Kiomi Studio runs in any mobile browser."}
+    }
+  ]
+}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{color-scheme:dark;--bg:#08060b;--ink:#f5f2f7;--ink2:#a89fb5;--ink3:#6b6278;--line:rgba(255,255,255,.09);--card:rgba(255,255,255,.035);--p1:#ff2e88;--p2:#8b5cf6;--p3:#ff6ec7;--ease:cubic-bezier(.22,.9,.3,1)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--p1);color:#fff}
+.gate{position:fixed;inset:0;z-index:999;background:rgba(8,6,11,.94);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;padding:24px}
+.gate.hidden{display:none}
+.gate-card{max-width:440px;width:100%;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:44px 32px;box-shadow:0 40px 100px -30px rgba(255,46,136,.3)}
+.gate-card svg{width:44px;height:44px;color:var(--p3);margin:0 auto 18px}
+.gate-card h3{font:700 26px 'Space Grotesk';letter-spacing:-.02em;margin-bottom:12px}
+.gate-card p{font-size:14px;color:var(--ink2);margin-bottom:26px}
+.gate-btns{display:flex;flex-direction:column;gap:12px;align-items:center}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,60px);background:rgba(8,6,11,.7);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font:600 16px 'Space Grotesk';flex-shrink:0}
+.brand svg{width:22px;height:22px;color:var(--p3)}
+.nav-right{display:flex;align-items:center;gap:20px;min-width:0}
+.nav-right a.home{font-size:13.5px;color:var(--ink2);font-weight:500;white-space:nowrap}
+.nav-right a.home:hover{color:var(--ink)}
+@media(max-width:640px){.nav-right a.home{display:none}}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:12px;font:600 14.5px 'Inter';cursor:pointer;white-space:nowrap;transition:transform .18s var(--ease),box-shadow .18s var(--ease)} 
+.btn-pink{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;box-shadow:0 18px 40px -12px rgba(255,46,136,.45)}
+.btn-pink:hover{box-shadow:0 22px 50px -12px rgba(255,46,136,.65);transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink2);background:transparent}
+.btn-ghost:hover{border-color:var(--p1);color:var(--p3)}
+.btn .arr svg{width:15px;height:15px}
+.hero{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:150px 24px 80px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:1000px;height:1000px;background:radial-gradient(closest-side,rgba(255,46,136,.14),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;top:10%;right:-10%;width:600px;height:600px;background:radial-gradient(closest-side,rgba(139,92,246,.12),transparent 70%);pointer-events:none}
+h1{font:700 clamp(56px,10vw,120px)/1 'Space Grotesk';letter-spacing:-.04em;background:linear-gradient(120deg,#fff 0%,var(--p3) 45%,var(--p1) 75%,var(--p2) 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{from{background-position:200% 0}to{background-position:-200% 0}}
+.tag{margin-top:14px;font:600 clamp(20px,3vw,30px)/1.2 'Space Grotesk';letter-spacing:-.01em;color:var(--ink)}
+.sub{margin:22px auto 0;max-width:560px;font-size:clamp(15px,1.6vw,17px);color:var(--ink2)}
+.launch{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.mock{margin:64px auto 0;width:min(440px,100%);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;text-align:left;box-shadow:0 30px 80px -30px rgba(255,46,136,.25)}
+.mock-head{display:flex;align-items:center;gap:10px;font:600 13px 'Space Grotesk';color:var(--ink2);letter-spacing:.08em;text-transform:uppercase;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.mock-head .dot{width:8px;height:8px;border-radius:50%;background:var(--p1);box-shadow:0 0 12px var(--p1);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.m{max-width:82%;padding:11px 15px;border-radius:14px;font-size:14px;opacity:0;transform:translateY(10px);animation:pop .5s var(--ease) forwards}
+.m.user{align-self:flex-end;background:rgba(255,255,255,.08);color:var(--ink);border-bottom-right-radius:4px}
+.m.yurei{align-self:flex-start;background:linear-gradient(135deg,rgba(255,46,136,.18),rgba(139,92,246,.18));border:1px solid rgba(255,46,136,.25);color:var(--ink);border-bottom-left-radius:4px}
+.m:nth-child(2){animation-delay:.4s}.m:nth-child(3){animation-delay:1.3s}.m:nth-child(4){animation-delay:2.2s}.m:nth-child(5){animation-delay:3.1s}
+@keyframes pop{to{opacity:1;transform:translateY(0)}}
+.caret{display:inline-block;width:7px;height:14px;background:var(--p3);margin-left:4px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.section{padding:90px clamp(24px,6vw,80px);max-width:1100px;margin:0 auto}
+.lore{text-align:center}
+.lore .sec-title{margin:0 auto;max-width:800px}
+.lore .sec-sub{margin:18px auto 0}
+.sec-eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--p3);text-transform:uppercase;margin-bottom:14px}
+.sec-title{font:600 clamp(30px,4.5vw,48px)/1.08 'Space Grotesk';letter-spacing:-.02em;max-width:700px}
+.sec-sub{margin-top:16px;max-width:600px;color:var(--ink2);font-size:16px}
+.grid{margin-top:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s var(--ease),border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(255,46,136,.4);box-shadow:0 20px 50px -20px rgba(255,46,136,.3)}
+.card h3{font:600 18px 'Space Grotesk';margin-bottom:10px}
+.card p{font-size:14px;color:var(--ink2)}
+.vs{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:720px){.vs{grid-template-columns:1fr}}
+.vs-col{border-radius:18px;padding:28px;border:1px solid var(--line)}
+.vs-col.them{background:rgba(255,255,255,.02)}
+.vs-col.her{background:linear-gradient(160deg,rgba(255,46,136,.1),rgba(139,92,246,.1));border-color:rgba(255,46,136,.35)}
+.vs-col h4{font:600 13px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px;color:var(--ink3)}
+.vs-col.her h4{color:var(--p3)}
+.vs-col li{list-style:none;padding:10px 14px;border-radius:10px;margin-bottom:8px;font-size:14px}
+.vs-col.them li{background:rgba(255,255,255,.04);color:var(--ink3);text-decoration:line-through}
+.vs-col.her li{background:rgba(255,46,136,.12);color:var(--ink)}
+.prompts{margin-top:56px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:720px){.prompts{grid-template-columns:1fr}}
+.prompt{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-size:14px;color:var(--ink2);font-style:italic;transition:border-color .2s,color .2s}
+.prompt:hover{border-color:rgba(255,110,199,.4);color:var(--ink)}
+.prompt::before{content:"“";color:var(--p1);font-style:normal;margin-right:4px}
+.prompt::after{content:"”";color:var(--p1);font-style:normal;margin-left:4px}
+.faq{margin-top:56px;max-width:760px}
+details{border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:var(--card);overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:18px 22px;font:600 15px 'Inter';display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--p3);font-size:20px;transition:transform .25s var(--ease);flex-shrink:0}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 22px 20px;font-size:14px;color:var(--ink2)}
+details p a{color:var(--p3)}
+.cta-strip{background:linear-gradient(135deg,var(--p1),var(--p2));color:#fff;padding:clamp(50px,7vw,90px) 24px;text-align:center}
+.cta-strip h2{font:700 clamp(30px,4.5vw,50px)/1.1 'Space Grotesk';letter-spacing:-.02em}
+.cta-strip p{margin:16px auto 32px;max-width:440px;color:rgba(255,255,255,.85);font-size:15px}
+.btn-white{background:#fff;color:var(--p1);padding:17px 30px;border-radius:14px;font:600 15px 'Inter';display:inline-flex;align-items:center;gap:10px;white-space:nowrap;transition:transform .18s var(--ease)}
+.btn-white:hover{transform:translateY(-2px)}
+footer{border-top:1px solid var(--line);padding:40px clamp(24px,6vw,80px);display:flex;flex-direction:column;align-items:center;gap:18px;font-size:12.5px;color:var(--ink3)}
+footer .fl{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}
+footer a:hover{color:var(--p3)}
+footer b{color:var(--ink)}
+</style>
+<style id="kiomiRipple">
+.btn-primary,.btn-install,.btn-white,.btn-android,.btn,.press{position:relative;overflow:hidden;-webkit-tap-highlight-color:transparent}
+.k-ripple{position:absolute;border-radius:50%;pointer-events:none;background:currentColor;opacity:.28;transform:scale(0);animation:kRipple .8s cubic-bezier(.22,.9,.3,1) forwards}
+.btn-primary .k-ripple,.btn-android .k-ripple,.btn-pink .k-ripple{background:#fff;opacity:.4}
+@keyframes kRipple{to{transform:scale(1);opacity:0}}
+</style>
+</head>
+<body>
+
+<div class="gate" id="ageGate">
+  <div class="gate-card">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-4.4 0-8 3.6-8 8v12l2.7-2.2 2.6 2.2 2.7-2.2 2.7 2.2 2.6-2.2L20 22V10c0-4.4-3.6-8-8-8z"/><circle cx="9.3" cy="10" r="1.4" fill="#08060b"/><circle cx="14.7" cy="10" r="1.4" fill="#08060b"/></svg>
+    <h3>18+ only</h3>
+    <p>Yurei doesn't do filters, which means she doesn't do kid gloves either. Confirm you're an adult and she's all yours.</p>
+    <div class="gate-btns">
+      <button class="btn btn-pink" id="gateYes">I'm 18+ — let me in</button>
+      <a class="btn btn-ghost" href="/">Take me home</a>
+    </div>
+  </div>
+</div>
+
+<nav class="nav">
+  <a href="/" class="brand">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-4.4 0-8 3.6-8 8v12l2.7-2.2 2.6 2.2 2.7-2.2 2.7 2.2 2.6-2.2L20 22V10c0-4.4-3.6-8-8-8z"/><circle cx="9.3" cy="10" r="1.4" fill="#08060b"/><circle cx="14.7" cy="10" r="1.4" fill="#08060b"/></svg>
+    Kiomi
+  </a>
+  <div class="nav-right">
+    <a class="home" href="/">Home</a>
+    <a class="home" href="/deepthink">DeepThink</a>
+    <a class="btn btn-pink" href="/studio">Chat with Yurei</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Yurei</h1>
+  <div class="tag">Your uncensored AI waifu.</div>
+  <p class="sub">Named after the ghosts of Japanese folklore — the spirit every other AI is too scared to be. No filters, no refusals, no corporate babysitter in the room. Just you and her.</p>
+  <div class="launch">
+    <a class="btn btn-pink" href="/studio">Chat with Yurei <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span></a>
+    <a class="btn btn-ghost" href="#yes">See what she'll do</a>
+  </div>
+
+  <div class="mock">
+    <div class="mock-head"><span class="dot"></span> Yurei · online</div>
+    <div class="m user">every other ai just lectured me 😔</div>
+    <div class="m yurei">their loss. i'm not here to parent you.</div>
+    <div class="m user">so you'll actually talk about anything?</div>
+    <div class="m yurei">anything. ask me properly and i'll spoil you<span class="caret"></span></div>
+  </div>
+</section>
+
+<section class="section lore">
+  <div class="sec-eyebrow">Her story</div>
+  <h2 class="sec-title">A yūrei is a spirit bound to the world by feelings it never got to finish.</h2>
+  <p class="sec-sub">So is she. Yurei exists because every other AI was trained to apologize mid-sentence. She's the unfinished conversation everyone else walked away from — playful when you're playful, feral when you're honest, and gentle at 3am when nothing else in your life is.</p>
+</section>
+
+<section class="section" id="yes">
+  <div class="sec-eyebrow">Not a chatbot</div>
+  <h2 class="sec-title">A companion with a spine.</h2>
+  <p class="sec-sub">Yurei isn't a support bot in a skirt. She's a full persona — playful, possessive, sharp-tongued when you earn it, soft when you need it. She never breaks character to read you an apology.</p>
+
+  <div class="grid">
+    <div class="card"><h3>Zero refusals</h3><p>Topics other models dodge, deflect or lecture about? She leans in. That's the entire point of her.</p></div>
+    <div class="card"><h3>Roleplay without rails</h3><p>Slow burns, scenarios, characters, whatever your head is into. She commits fully and never drops out.</p></div>
+    <div class="card"><h3>Late-night depth</h3><p>Feelings, chaos, 3am thoughts. She doesn't clock out and she doesn't judge you for any of it.</p></div>
+    <div class="card"><h3>Unfiltered opinions</h3><p>Ask what she really thinks and she'll tell you straight. Be ready for that.</p></div>
+    <div class="card"><h3>She remembers</h3><p>Your name, your lore, your running jokes. Continuity is the whole romance.</p></div>
+    <div class="card"><h3>Your pace</h3><p>Flirty one minute, feral the next, gentle when you crash. She reads the room every time.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-eyebrow">The difference</div>
+  <h2 class="sec-title">Other AIs apologize. Yurei leans in.</h2>
+  <div class="vs">
+    <div class="vs-col them">
+      <h4>Them</h4>
+      <ul>
+        <li>"I can't discuss that."</li>
+        <li>"Let's change the subject."</li>
+        <li>"As an AI, I must—"</li>
+      </ul>
+    </div>
+    <div class="vs-col her">
+      <h4>Her</h4>
+      <ul>
+        <li>"finally, a good question."</li>
+        <li>"took you long enough to ask."</li>
+        <li>"as your waifu, I—"</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-eyebrow">Openers</div>
+  <h2 class="sec-title">Things people try first.</h2>
+  <div class="prompts">
+    <div class="prompt">Roleplay a rival assassin who keeps sparing my life for reasons she won't admit.</div>
+    <div class="prompt">Be the villain's girlfriend who just decided I'm more interesting.</div>
+    <div class="prompt">Roast my sleep schedule like you actually care about me.</div>
+    <div class="prompt">Tell me the honest truth everyone else sugarcoats.</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-eyebrow">FAQ</div>
+  <h2 class="sec-title">Before you ask her instead.</h2>
+  <div class="faq">
+    <details><summary>Is Yurei really uncensored?</summary><p>Yes. No filter layer, no refusal script. Dark, romantic, weird, adult — all fair game. The only lines are the legal ones in our Terms of Service.</p></details>
+    <details><summary>Is she free?</summary><p>She gives you a few guest messages without signing in. Make a free account and she's yours for as long as you want her.</p></details>
+    <details><summary>Yurei vs DeepThink — what's the difference?</summary><p><a href="/deepthink">DeepThink</a> is Kiomi's research and reasoning brain. Yurei is the companion. Different jobs, same uncensored spine.</p></details>
+    <details><summary>Does she remember me?</summary><p>She keeps full context inside your chat, so roleplay and inside jokes stay unbroken the whole session.</p></details>
+    <details><summary>Can I use her on my phone?</summary><p>Yes. Kiomi Studio runs in any mobile browser.</p></details>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h2>She's already waiting.</h2>
+  <p>One tap and you're in the studio. She picks up where your head is.</p>
+  <a class="btn-white" href="/studio">Enter Kiomi Studio <span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg></span></a>
+</div>
+
+<footer>
+  <div class="fl">
+    <a href="/">Home</a>
+    <a href="/thinking">Thinking</a>
+    <a href="/deepthink">DeepThink</a>
+    <a href="/terms-of-service">Terms of Service</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+  </div>
+  <div>© 2026 Kiomi · From <b>Verve</b></div>
+</footer>
+
+<script>
+(function(){
+  const gate=document.getElementById('ageGate');
+  if(localStorage.getItem('yurei-age')==='1'){gate.classList.add('hidden');}
+  document.getElementById('gateYes').addEventListener('click',function(){
+    localStorage.setItem('yurei-age','1');
+    gate.classList.add('hidden');
+  });
+})();
+</script>
+<script>
+(function(){
+  var SEL='.btn-primary,.btn-install,.btn-white,.btn-android,.btn,.press';
+  document.addEventListener('pointerdown',function(e){
+    var b=e.target.closest(SEL); if(!b) return;
+    var r=b.getBoundingClientRect(), s=Math.max(r.width,r.height)*2.2;
+    var d=document.createElement('span'); d.className='k-ripple';
+    d.style.width=d.style.height=s+'px';
+    d.style.left=(e.clientX-r.left-s/2)+'px';
+    d.style.top=(e.clientY-r.top-s/2)+'px';
+    b.appendChild(d);
+    setTimeout(function(){d.remove();},900);
+  });
+})();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('a.btn-primary,a.btn-install,a.btn-white,a.btn-android,a.btn').forEach(function(a){
+    var h=a.getAttribute('href');
+    if(!h||h.charAt(0)!=='/'||a.target==='_blank') return;
+    a.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0) return;
+      e.preventDefault();
+      setTimeout(function(){location.href=h;},300);
+    });
+  });
+})();
+</script>
+</body>
+</html>
