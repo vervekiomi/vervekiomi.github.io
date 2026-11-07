@@ -247,48 +247,82 @@ document.querySelectorAll('.btn-primary, .btn-install, .btn-white').forEach(btn 
   });
 });
 
+/* Kiomi orb — exact paintOrb + ORB_BLOBS + orbSpeed from the app's src/orb.ts */
 (function(){
   const canvas = document.getElementById('logoCanvas');
   if(!canvas) return;
   const ctx = canvas.getContext('2d');
   const W = 84, H = 84, R = 42, cx = W / 2, cy = H / 2;
-  const blobs = [
-    { fx: 0.71, fy: 1.13, phase: 0.00, amp: 0.52, r: 40, color: '#00f2ff' },
-    { fx: 1.31, fy: 0.83, phase: 1.20, amp: 0.48, r: 38, color: '#ff00c8' },
-    { fx: 0.93, fy: 1.41, phase: 2.10, amp: 0.44, r: 35, color: '#39ff14' },
-    { fx: 1.17, fy: 0.67, phase: 0.80, amp: 0.50, r: 33, color: '#6e5fff' },
-    { fx: 1.53, fy: 1.27, phase: 1.70, amp: 0.38, r: 30, color: '#ff0088' },
-    { fx: 0.79, fy: 1.63, phase: 3.00, amp: 0.42, r: 32, color: '#ffff00' },
-    { fx: 1.23, fy: 0.91, phase: 4.20, amp: 0.35, r: 29, color: '#00ffdd' },
-    { fx: 0.61, fy: 1.37, phase: 5.10, amp: 0.46, r: 36, color: '#a855f7' },
+  const ORB_BASE_R = 42;
+
+  const ORB_BLOBS = [
+    { fx: 0.71, fy: 1.13, phase: 0.0, amp: 0.52, r: 40, color: "#00c8ff" },
+    { fx: 1.31, fy: 0.83, phase: 1.2, amp: 0.48, r: 38, color: "#2f6bff" },
+    { fx: 0.93, fy: 1.41, phase: 2.1, amp: 0.44, r: 35, color: "#00e5d0" },
+    { fx: 1.17, fy: 0.67, phase: 0.8, amp: 0.5, r: 33, color: "#6f8dff" },
+    { fx: 1.53, fy: 1.27, phase: 1.7, amp: 0.38, r: 30, color: "#0a5cff" },
+    { fx: 0.79, fy: 1.63, phase: 3.0, amp: 0.42, r: 32, color: "#8fd8ff" },
+    { fx: 1.23, fy: 0.91, phase: 4.2, amp: 0.35, r: 29, color: "#00b3ff" },
+    { fx: 0.61, fy: 1.37, phase: 5.1, amp: 0.46, r: 36, color: "#4a5cff" },
   ];
+
   const SLOW = 0.12, FAST = 2.2, CYCLE = 5000;
-  let startTime = performance.now(), lastTime = startTime, t = 0;
-  function getSpeed(now) {
-    const cycleT = (now - startTime) % CYCLE;
-    const s = (Math.sin((cycleT / CYCLE) * Math.PI * 2 - Math.PI / 2) + 1) / 2;
+  function orbSpeed(now) {
+    const s = (Math.sin(((now % CYCLE) / CYCLE) * Math.PI * 2 - Math.PI / 2) + 1) / 2;
     return SLOW + (FAST - SLOW) * s;
   }
+
+  function paintOrb(ctx, cx, cy, R, t) {
+    const k = R / ORB_BASE_R;
+    const x0 = cx - R, y0 = cy - R, w = R * 2, h = R * 2;
+
+    // soft blue base wash
+    const bg = ctx.createRadialGradient(cx, cy - 0.3 * R, 0, cx, cy, R);
+    bg.addColorStop(0.0, "#ffffff");
+    bg.addColorStop(0.45, "#eef6ff");
+    bg.addColorStop(1.0, "#dbeaff");
+    ctx.fillStyle = bg;
+    ctx.fillRect(x0, y0, w, h);
+
+    ORB_BLOBS.forEach((b) => {
+      const bx = cx + Math.sin(b.fx * t + b.phase) * R * b.amp;
+      const by = cy + Math.cos(b.fy * t + b.phase * 1.4) * R * b.amp;
+      const br = b.r * k * (1 + 0.08 * Math.sin(b.fx * t * 2.3 + b.phase));
+      const g = ctx.createRadialGradient(bx, by, 0, bx, by, br);
+      g.addColorStop(0.0, b.color + "ff");
+      g.addColorStop(0.35, b.color + "d9");
+      g.addColorStop(0.7, b.color + "5c");
+      g.addColorStop(1.0, b.color + "00");
+      ctx.beginPath();
+      ctx.arc(bx, by, br, 0, Math.PI * 2);
+      ctx.fillStyle = g;
+      ctx.fill();
+    });
+
+    // soft light bloom
+    const glow = ctx.createRadialGradient(cx - 0.25 * R, cy - 0.4 * R, 0, cx - 0.25 * R, cy - 0.4 * R, R * 1.05);
+    glow.addColorStop(0.0, "rgba(255,255,255,0.55)");
+    glow.addColorStop(0.45, "rgba(210,235,255,0.18)");
+    glow.addColorStop(1.0, "rgba(180,215,255,0)");
+    ctx.fillStyle = glow;
+    ctx.fillRect(x0, y0, w, h);
+
+    // gentle vignette to deepen the blue at the rim
+    const vig = ctx.createRadialGradient(cx, cy, R * 0.55, cx, cy, R);
+    vig.addColorStop(0.0, "rgba(20,70,170,0)");
+    vig.addColorStop(1.0, "rgba(20,70,170,0.16)");
+    ctx.fillStyle = vig;
+    ctx.fillRect(x0, y0, w, h);
+  }
+
+  let lastTime = performance.now(), t = 0;
   function draw(now) {
     const dt = now - lastTime; lastTime = now;
-    t += getSpeed(now) * dt * 0.001;
+    t += orbSpeed(now) * dt * 0.001;
     ctx.clearRect(0, 0, W, H);
     ctx.save();
     ctx.beginPath(); ctx.arc(cx, cy, R, 0, Math.PI * 2); ctx.clip();
-    const bg = ctx.createRadialGradient(cx, cy, 0, cx, cy, R);
-    bg.addColorStop(0.00, '#ffffff'); bg.addColorStop(1.00, '#f3f4f6');
-    ctx.fillStyle = bg; ctx.fillRect(0, 0, W, H);
-    blobs.forEach(b => {
-      const bx = cx + Math.sin(b.fx * t + b.phase) * R * b.amp;
-      const by = cy + Math.cos(b.fy * t + b.phase * 1.4) * R * b.amp;
-      const pulse = 1 + 0.08 * Math.sin(b.fx * t * 2.3 + b.phase);
-      const br = b.r * pulse;
-      const grad = ctx.createRadialGradient(bx, by, 0, bx, by, br);
-      grad.addColorStop(0.00, b.color + 'ff'); grad.addColorStop(0.40, b.color + 'cc');
-      grad.addColorStop(0.80, b.color + '44'); grad.addColorStop(1.00, b.color + '00');
-      ctx.beginPath(); ctx.arc(bx, by, br, 0, Math.PI * 2);
-      ctx.fillStyle = grad; ctx.fill();
-    });
+    paintOrb(ctx, cx, cy, R, t);
     ctx.restore();
     requestAnimationFrame(draw);
   }
